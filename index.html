@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Campos - Opciones de Landing</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 60px 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 80px;
+        }
+        .header h1 {
+            font-size: 4em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+        .header .subtitle {
+            font-size: 1em;
+            opacity: 0.8;
+        }
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        .option {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        .option:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 50px 100px rgba(0,0,0,0.4);
+        }
+        .option-preview {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4em;
+        }
+        .option-a .option-preview { background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%); color: #000; }
+        .option-b .option-preview { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #ff6b35; }
+        .option-c .option-preview { background: linear-gradient(135deg, #f0f4ff 0%, #e6e9ff 100%); color: #6366f1; }
+
+        .option-content {
+            padding: 35px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .option h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .option .type {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        .option-desc {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex: 1;
+        }
+        .option ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        .option li {
+            padding: 8px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .option li:before {
+            content: "✓ ";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: auto;
+        }
+        .btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .footer p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+        .note {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            color: white;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .note strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5em; }
+            .header p { font-size: 1.1em; }
+            .options { gap: 20px; }
+            .option-content { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Gustavo Campos</h1>
+            <p>Consultoría de Ventas Premium</p>
+            <p class="subtitle">Elige tu diseño favorito para la landing</p>
+        </div>
+
+        <div class="options">
+            <!-- OPCIÓN A -->
+            <div class="option option-a">
+                <div class="option-preview">🎯</div>
+                <div class="option-content">
+                    <h2>Opción A</h2>
+                    <div class="type">Minimalista Premium</div>
+                    <p class="option-desc">Diseño limpio y profesional. Blanco, negro y gris. Ideal para consultores que quieren verse premium y exclusivos.</p>
+                    <ul>
+                        <li>Diseño minimalista</li>
+                        <li>Alto contraste</li>
+                        <li>Profesional y sofisticado</li>
+                        <li>Instagram embed incluido</li>
+                    </ul>
+                    <button class="btn" onclick="abrirDemo('a')">Ver Demo</button>
+                </div>
+            </div>
+
+            <!-- OPCIÓN B -->
+            <div class="option option-b">
+                <div class="option-preview">⚡</div>
+                <div class="option-content">
+                    <h2>Opción B</h2>
+                    <div class="type">Bold & Energético</div>
+                    <p class="option-desc">Dinámico y moderno. Negro con naranja. Perfecto para growth marketing y emprendedores con energía.</p>
+                    <ul>
+                        <li>Contraste mejorado</li>
+                        <li>Dinámico y moderno</li>
+                        <li>Números destacados</li>
+                        <li>Instagram embed incluido</li>
+                    </ul>
+                    <button class="btn" onclick="abrirDemo('b')">Ver Demo</button>
+                </div>
+            </div>
+
+            <!-- OPCIÓN C -->
+            <div class="option option-c">
+                <div class="option-preview">✨</div>
+                <div class="option-content">
+                    <h2>Opción C</h2>
+                    <div class="type">Sofisticado Corporate</div>
+                    <p class="option-desc">Elegante y corporativo. Indigo con gradientes sutiles. Para empresas establecidas y consultores de alto nivel.</p>
+                    <ul>
+                        <li>Elegante y corporativo</li>
+                        <li>Gradientes sofisticados</li>
+                        <li>Premium y exclusivo</li>
+                        <li>Instagram embed incluido</li>
+                    </ul>
+                    <button class="btn" onclick="abrirDemo('c')">Ver Demo</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="note">
+                <strong>💡 Si te pide login en Vercel:</strong>
+                Abre en una pestaña de <strong>INCÓGNITA</strong> (Ctrl+Shift+N en Windows, Cmd+Shift+N en Mac) o usa otro navegador
+            </div>
+            <p style="margin-top: 30px;">Todas las opciones incluyen: 8 secciones completas • Responsive • SEO optimizado • Instagram social proof • Formulario de contacto</p>
+        </div>
+    </div>
+
+    <script>
+        const demos = {
+            a: 'https://gustavo-campos-option-5u3uw0ur7-dukecreas-projects.vercel.app',
+            b: 'https://gustavo-campos-option-fm9kqyg62-dukecreas-projects.vercel.app',
+            c: 'https://gustavo-campos-option-nf8i0e1rw-dukecreas-projects.vercel.app'
+        };
+
+        function abrirDemo(option) {
+            const url = demos[option];
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
